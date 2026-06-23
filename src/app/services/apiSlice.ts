@@ -11,9 +11,9 @@ export const dummyApiSlice = createApi({
       providesTags: ['todos'],
     }),
 
-    addTodos: builder.mutation<TodosType>({
-      query: ({ newTodo }) => ({
-        url: 'todos',
+    addTodos: builder.mutation<TodosType, TodosType>({
+      query: (newTodo) => ({
+        url: 'todos/add',
         method: 'POST',
         body: newTodo,
       }),
@@ -21,7 +21,7 @@ export const dummyApiSlice = createApi({
     }),
 
     upateTodos: builder.mutation<TodosType, number>({
-      query: ({ id, data }) => ({
+      query: (id, data) => ({
         method: 'PUT',
         url: `todos/${id}`,
         body: data,

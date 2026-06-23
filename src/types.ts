@@ -1,5 +1,5 @@
 export type TodosType = {
-  id: number;
+  id?: number;
   todo: string;
   userId: number;
   completed: boolean;
