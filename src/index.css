@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply bg-gray-200 text-black font-bold font-sans;
+  }
+}
+@utility container {
+  @apply flex flex-col justify-center items-center p-4;
+}
+
+@utility card {
+  @apply flex flex-col justify-center items-center p-4 bg-white/30 backdrop-blur-md rounded-lg shadow-md transition-all duration-300;
+}
