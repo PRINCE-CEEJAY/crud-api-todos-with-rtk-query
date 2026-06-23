@@ -9,8 +9,9 @@ export default function AddTodos({ editing }: { editing: TodosType }) {
   const [addTodo, { status }] = useAddTodosMutation();
 
   async function handleAddTodo() {
+    if (!todoInput.trim()) return;
     const newTodo = {
-      todo: todoInput.trim(),
+      todo: todoInput,
       completed: false,
       userId: Math.round(Math.random() * 100 + 1),
     };
